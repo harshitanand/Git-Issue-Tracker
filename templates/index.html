@@ -42,19 +42,19 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr class="warning">
                 <td>Total number of open issues</td>
                 <td>{{ total_issues }}</td>
               </tr>
-              <tr>
+              <tr class="warning">
                 <td>Number of open issues that were opened in the last 24 hours</td>
                 <td>{{ lastday_issues }}</td>
               </tr>
-              <tr>
+              <tr class="warning">
                 <td>Number of open issues that were opened more than 24 hours ago but less than 7 days ago</td>
                 <td>{{ lastweek_issues }}</td>
               </tr>
-              <tr>
+              <tr class="warning">
                   <td>Number of open issues that were opened more than 7 days ago </td>
                   <td>{{ before_week }}</td>
               </tr>
@@ -67,7 +67,7 @@
                 <h3 class="panel-title">Error Occured</h3>
             </div>
             <div class="panel-body">
-                {{ error }}
+                <p class="text-warning">{{ error }}</p>
             </div>
         </div>
     {% endif %}
