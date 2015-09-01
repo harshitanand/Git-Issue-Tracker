@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trace Issues</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+    {% if total_issues %}
+        <div class="container">
+            <table class="table">
+            <thead>
+              <tr>
+                <th>Issues</th>
+                <th>Count</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Total number of open issues</td>
+                <td>{{ total_issues }}</td>
+              </tr>
+              <tr>
+                <td>Number of open issues that were opened in the last 24 hours</td>
+                <td>{{ lastday_issues }}</td>
+              </tr>
+              <tr>
+                <td>Number of open issues that were opened more than 24 hours ago but less than 7 days ago</td>
+                <td>{{ lastweek_issues }}</td>
+              </tr>
+              <tr>
+                  <td>Number of open issues that were opened more than 7 days ago </td>
+                  <td>{{ before_week }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    {% else %}
+        <form action="/track/" method="POST">
+        <input type="url" placeholder="Enter the repository url" name="address">
+        <input type="submit">
+        </form>
+    {% endif %}
+</body>
+</html>
