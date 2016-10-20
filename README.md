@@ -3,7 +3,7 @@ Django app to track open issues of a public git repo for last 1 month
 
 ![App Preview](https://raw.githubusercontent.com/harshitanand/Git-Issue-Tracker/master/img/1.png)
 
-## Prequisites
+## Prerequisites
 In order to run the app you need to have following dependencies
     
     python >= 2.7
